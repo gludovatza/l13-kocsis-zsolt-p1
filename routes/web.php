@@ -3,18 +3,14 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
+    $username = 'John';
+    return view('welcome', [
+        'name' => $username
+    ]);
 });
 
 Route::get('/contact', function () {
     return view('contact');
-});
-
-Route::get('/hello', function () {
-    $username = 'John';
-    return view('hello', [
-        'name' => $username
-    ]);
 });
 
 Route::get('/pass-array', function () {
